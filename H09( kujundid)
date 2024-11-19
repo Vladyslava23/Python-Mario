@@ -1,0 +1,70 @@
+#08.11.24 Vladyslava Bilokha
+#Harjutus 09 (3,15,8)
+import turtle
+
+#3
+turtle.speed(0)
+
+turtle.penup()
+turtle.goto(250,0)
+turtle.pendown()
+
+for i in range(6):
+    turtle.forward(100)
+    turtle.left(90)
+turtle.forward(50)
+turtle.left(270)
+turtle.forward(50)
+turtle.right(180)
+turtle.forward(100)
+turtle.right(270)
+for i in range(3):
+    turtle.forward(100)
+    turtle.left(90)
+
+#15
+turtle.speed(0)
+turtle.penup()
+turtle.goto(-250,0)
+turtle.pendown()
+
+
+for i in range(5):
+    turtle.forward(100)
+    turtle.left(90)
+turtle.forward(25)
+
+turtle.color("red")
+turtle.left(90)
+turtle.forward(50)
+for i in range(2):
+    turtle.right(90)
+    turtle.forward(50)
+turtle.color("black")
+turtle.right(270)
+turtle.forward(25)
+
+turtle.left(90)
+turtle.forward(100)
+turtle.color("green")
+turtle.right(320)
+turtle.forward(85)
+turtle.left(105)
+turtle.forward(83)
+
+
+
+#8
+def draw_pseudo_star(who, scale):
+    for i in range(4):
+        for j in range(2):
+            who.forward(scale)
+            who.left(45)
+            who.forward(scale)
+            who.right(90)
+
+eighth = turtle.Turtle()
+eighth.speed(0)
+draw_pseudo_star(eighth,40)
+
+turtle.done
