@@ -55,16 +55,17 @@ turtle.forward(83)
 
 
 #8
-def draw_pseudo_star(who, scale):
-    for i in range(4):
-        for j in range(2):
-            who.forward(scale)
-            who.left(45)
-            who.forward(scale)
-            who.right(90)
+turtle.speed(2)
+turtle.penup()
+turtle.goto(100,100)
+turtle.pendown()
+turtle.color("black")
+for i in range(4):
+    for j in range(2):
+         turtle.forward(30)
+         turtle.left(45)
+         turtle.forward(30)
+         turtle.right(90)
 
-eighth = turtle.Turtle()
-eighth.speed(0)
-draw_pseudo_star(eighth,40)
 
 turtle.done
