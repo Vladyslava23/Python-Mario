@@ -1,0 +1,63 @@
+#28.11.24 Vladyslava Bilokha
+#Ülesanne 17
+
+
+#Pangatehingut:
+#kogu tehingute arvu
+#positiivsete tehingute arvu
+#positiivsete tehingute kogusumma
+
+fail = open("pangakonto.txt")
+
+tekstiread = fail.readlines()
+tehingute_arv = len(tekstiread)
+pos_tehingute = 0
+pos_tehingute_summa = 0
+
+for i in tekstiread: 
+    if float(i) > 0:
+        pos_tehingute+=1
+        pos_tehingute_summa+=float(i)
+
+print(f"Tehinguid kokku: {tehingute_arv}")
+print("Pos tehinguid kokku:{pos_tehingud} ")
+print("Tehingute summa: {pos_tehingute_summa}")
+
+fail.close
+
+
+#Kirjuta Pythoni skript, mis loeb failist palgad.txt töötajate andmed ja arvutab eraldi
+#meeste keskmised töötunnid, töötasu ning palk
+#naiste keskmised töötunnid, töötasu ning pal
+#Tulemused prindi konsooli
+
+fail = open("palgad.txt")
+tekstiread = fail.readlines()
+tehingute_arv = len(tekstiread)
+
+mpalgad = []
+npalgad = []
+
+for rida in tekstiread: 
+     andmed = rida.strip()
+     sugu = float(andmed[4])  
+     palk = float(andmed[7])
+     
+
+
+
+
+
+
+print("Meeste keskmised töötunnid: {mpalgad}")
+print("Naiste keskmised töötunnid: {npalgad}")
+
+
+
+
+
+
+
+
+
+
