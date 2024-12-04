@@ -1,11 +1,11 @@
 #28.11.24 Vladyslava Bilokha
 #Ülesanne 17
 
-
 #Pangatehingut:
 #kogu tehingute arvu
 #positiivsete tehingute arvu
 #positiivsete tehingute kogusumma
+
 
 fail = open("pangakonto.txt")
 
@@ -25,39 +25,43 @@ print("Tehingute summa: {pos_tehingute_summa}")
 
 fail.close
 
-
 #Kirjuta Pythoni skript, mis loeb failist palgad.txt töötajate andmed ja arvutab eraldi
 #meeste keskmised töötunnid, töötasu ning palk
-#naiste keskmised töötunnid, töötasu ning pal
+#naiste keskmised töötunnid, töötasu ning palk
 #Tulemused prindi konsooli
+with open("palgad.txt", "r") as fail:
+    tekstiread = fail.readlines()
+    tehingute_arv = len(tekstiread)
+meesteArv = 0
+meesteTundideSumma = 0
+meesteTasuSumma = 0
+meestePalkadeSumma = 0
+    
+naisteArv = 0
+naisteTundideSumma = 0
+naisteTasuSumma = 0
+naistePalkadeSumma = 0
+    
+for rida in fail:
+    if rida.strip():
+        if "Mees" in rida:
+            veerud = rida.strip().split(",")
+            meesteArv += 1
+            meesteTundideSumma += float(veerud[4])
+            meesteTasuSumma += float(veerud[5])
+            meestePalkadeSumma += float(veerud[6])
 
-fail = open("palgad.txt")
-tekstiread = fail.readlines()
-tehingute_arv = len(tekstiread)
+        if "Naine" in rida:
+            veerud = rida.strip().split(",")
+            naisteArv += 1
+            naisteTundideSumma += float(veerud[4])
+            naisteTasuSumma += float(veerud[5])
+            naistePalkadeSumma += float(veerud[6])
 
-mpalgad = []
-npalgad = []
+meesteKeskmineTunnid = meesteTundideSumma / meesteArv
+meesteKeskmineTasu = meesteTasuSumma / meesteArv
+meesteKeskminePalk = meestePalkadeSumma / meesteArv
 
-for rida in tekstiread: 
-     andmed = rida.strip()
-     sugu = float(andmed[4])  
-     palk = float(andmed[7])
-     
-
-
-
-
-
-
-print("Meeste keskmised töötunnid: {mpalgad}")
-print("Naiste keskmised töötunnid: {npalgad}")
-
-
-
-
-
-
-
-
-
-
+naisteKeskmineTunnid = naisteTundideSumma / naisteArv
+naisteKeskmineTasu = naisteTasuSumma / naisteArv
+naisteKeskminePalk = naistePalkadeSumma / naisteArv
