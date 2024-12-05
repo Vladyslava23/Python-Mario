@@ -1,0 +1,27 @@
+#05.12.2024 Vladyslava Bilokha 
+# KT
+
+
+print("Tere, maailm!")
+
+#2
+aasta = 2020
+liblikas = "teelehe-mosaiikliblikas"
+lause_keskosa = "aasta liblikas on"
+
+def lause():
+    print(aasta,lause_keskosa,liblikas)
+lause()
+
+
+#3
+alus_kõrgus = int(input("Sisetage pilvwbaasi kõrgus km:"))
+if alus_kõrgus <=6 :
+    print("Need on ülemised pilved")
+else:
+    print("Need ei ole ülemised pilved")
+
+#4
+
+
+
