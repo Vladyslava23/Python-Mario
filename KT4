@@ -1,0 +1,18 @@
+#1
+mitu = int(input("Mitu korda:"))
+lause = input("Sinu reklaamlause:")
+
+def banner(1):
+    print(1. upper())
+
+
+for i in range(mitu):
+    print(lause)
+
+
+#2
+def mahlapakkide_arv(onutekogus):
+    mahlapakkidearv = int(round(onutekogus * 0.4/3))
+    return mahlapakkidearv
+kg = float(input("Õunte kogus:"))
+print(mahlapakkide_arv(kg))
