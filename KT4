@@ -1,4 +1,4 @@
-'''
+
 #1
 mitu = int(input("Mitu korda:"))
 lause = input("Sinu reklaamlause:")
@@ -40,7 +40,7 @@ def tervitus(n):
         print(f"Külaline: \"Tere, suur tänu kutse eest!\"")
 kulaliste_arv = int(input("Sisestage külaliste arv:"))
 tervitus(kulaliste_arv)
-'''
+
 
 #5
 failinimi = input("Siseta failinimi :")
