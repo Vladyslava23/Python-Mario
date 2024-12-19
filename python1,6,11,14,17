@@ -26,11 +26,102 @@ else:
 
 
 #11
+alphabet = list("abcdefghijklmnopqrstuvwxyz") 
+
+def create_cipher(text):
+    result = []
+    for char in text:
+        if char in alphabet:
+            index = alphabet.index(char)
+            new_index = (index + 1) % len(alphabet)  
+            result.append(alphabet[new_index])
+        else:
+            result.append(char) 
+    return ''.join(result)
+
+def decode_cipher(ciphered_text):
+    result = []
+    for char in ciphered_text:
+        if char in alphabet:
+            index = alphabet.index(char)
+            new_index = (index - 1) % len(alphabet)
+            result.append(alphabet[new_index])
+        else:
+            result.append(char)
+    return ''.join(result)
+
+print("Valige programmi töörežiim")
+print("1) Ingliskeel -> Tundmatu keel")
+print("2) Tundmatu keel -> Ingliskeel")
+choice = input("Teie valik: ")
+
+if choice == "1":
+    normal_word = input("Teie sõna: ").lower()
+    ciphered_word = create_cipher(normal_word)
+    print(f"Krüpteeritud sõna: {ciphered_word}")
+elif choice == "2":
+    ciphered_word = input("Teie sõna: ").lower()
+    normal_word = decode_cipher(ciphered_word)
+    print(f"Tavaline sõna: {normal_word}")
+else:
+    print("Vale valik. Palun valige 1 või 2.")
 
 
-'''
+
 #14
-fail = open("palk.txt")
-read = fail.readlines()
-'''
+with open('palk.txt', 'r') as file:
+    meesteArv = 0
+    meestePalkadeSumma = 0
+    meesteMaksimaalnePalk = float('-inf')
+    
+    naisteArv = 0
+    naistePalkadeSumma = 0
+    naisteMaksimaalnePalk = float('-inf')
 
+    for line in file:
+        if line.strip():
+            nimi, sugu, palk = line.strip().split(',')
+            sugu = sugu.strip()
+            palk = float(palk)
+            
+            if sugu == 'm':
+                meesteArv += 1
+                meestePalkadeSumma += palk
+                meesteMaksimaalnePalk = max(meesteMaksimaalnePalk, palk)
+            
+            elif sugu == 'n': 
+                naisteArv += 1
+                naistePalkadeSumma += palk
+                naisteMaksimaalnePalk = max(naisteMaksimaalnePalk, palk)
+
+if meesteArv > 0:
+    meesteKeskminePalk = meestePalkadeSumma / meesteArv
+else:
+    meesteKeskminePalk = 0
+
+if naisteArv > 0:
+    naisteKeskminePalk = naistePalkadeSumma / naisteArv
+else:
+    naisteKeskminePalk = 0
+
+if meesteKeskminePalk > naisteKeskminePalk and meesteMaksimaalnePalk > naisteMaksimaalnePalk:
+    print("Märgid soolisest diskrimineerimisest (meeste kasuks) on olemas.")
+elif naisteKeskminePalk > meesteKeskminePalk and naisteMaksimaalnePalk > meesteMaksimaalnePalk:
+    print("Märgid soolisest diskrimineerimisest (naiste kasuks) on olemas.")
+else:
+    print("Soolist diskrimineerimist ei tuvastatud.")
+
+
+#17
+def process_email(email):
+    if "@" in email and "." in email:
+        osad = email.split("@")
+        if len(osad) == 2:
+            kasutajanimi = osad[0]
+            server_osad = osad[1].split(".")
+            if len(server_osad) == 2:
+                server = server_osad[0]
+                domeeni = server_osad[1]
+                print(f"Tere, {kasutajanimi}, teie e-post on hostitud serveris {server}, ja teie domeen on {domeeni}.")
+                return
+    print("Viga: Vigane e-posti formaat. Veenduge, et e-post oleks formaadis kasutajanimi@server.domeen.")
