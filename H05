@@ -45,7 +45,8 @@ else:
 
 # 1. Ilmaennustuse rakendus
 try:
-    c = int(input("Lisa kraadid:"))   
+    c = int(input("Lisa kraadid:"))
+       
 if c < 0:
     print("Kanna talveriideid")
 elif c>=0 and c<=15:
