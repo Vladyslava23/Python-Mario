@@ -22,6 +22,163 @@ else:
     print("Need ei ole ülemised pilved")
 
 #4
+inimesed = 60 
+istekoht = 40
+
+bussid = inimesed//istekoht
+viimaes_bussis = inimesed%istekoht
+if viimaes_bussis ==0:
+    print(f" Selle arvu   ")
+else:
+    print(f"   ")
+
+
+# KT2
+import random
+
+#1
+kordade_arv = int(input ("Sissetage mitu korda äratada:"))
+for i in range(kordade_arv):
+    print("Tõuse ja sära!")
+
+#2
+ringide_arv = int(input("Sisseta ringide arv:"))
+koguarv = 0
+ring = 1
+while ring <= ringide_arv:
+    if ring % 2 == 0:
+        koguarv += ring
+    ring += 1
+print(f"Porgandite koguarv on {koguarv}.")
+
+#3
+taring = 5
+for i in range(taring):
+    taring = random.randint(1,6)
+
+
+
+#4
+taisarv = 10 
+nisutera = 0
+korda = taisarv
+
+if taisarv > 64:
+    print("Nii palju ruute ei ole")
+
+if taisarv >= 1:
+    nisutera+=1
+    taisarv-=1 
+
+while taisarv >= 1:
+    nisutera *=2
+    korda -=1
+print ("nisutera")
+
+# KT3
+
+
+
+#2
+ringide_arv = int(input("Sissetega ringide arv:"))
+porgandite_summ = 0
+for rida in range(2,ringide_arv + 1,2):
+    porgandite_summ += ring
+print("")
+
+
+
+
+
+
+#3
+with open ("konto.txt" , "r" )as fail:
+    read = fail.readlines()
+for rida in read:
+    arv = float(rida.strip())
+    if arv > 0:
+        print(arv)
+fail.close()
+
+
+
+#4
+valik = input("Sisseta faili nimi: ")
+fail = open("valik")
+read = fail.readlines()
+mitmes = 1
+for i in read:
+    print(mitmes, i, end= '')
+    mitmes =+1
+
+lugu = int(input("sisseta loonumber"))
+fail = open(valik)
+read = fail.readlines()
+
+print("mängiv lugu",read[lugu-1])
+for i in read: 
+    print( i, end= '')
+
+
+#5
+fail = open("nimekiri.txt")
+read = fail.readlines()
+print(datetime.now().day)
+print(read[datetime.now().day-1])
+
+
+
+
+#1
+mitu = int(input("Mitu korda:"))
+lause = input("Sinu reklaamlause:")
+
+def banner(1):
+    print(1. upper())
+
+
+for i in range(mitu):
+    print(lause)
+
+
+#2
+def mahlapakkide_arv(onutekogus):
+    mahlapakkidearv = int(round(onutekogus * 0.4/3))
+    return mahlapakkidearv
+kg = float(input("Õunte kogus:"))
+print(mahlapakkide_arv(kg))
+
+
+
+#3
+def eelarve(n):
+    kokku = n * 10 + 55
+    return kokku
+
+maks_inimesed =int(input("Sisestage maksimaalne arv:"))
+miinimum_inimesed = int(input("Sisestage minimaalne arv:"))
+
+print("Maksimaalne arv:",eelarve(maks_inimesed))
+print("Minimaalne arv:", eelarve(miinimum_inimesed) )
+
+
+#4
+def tervitus(n):
+    for i in range(n):
+        print(f"Võõrustaja: \"Tere!\"" )
+        print(f"Täna {i+1}. kord , mõtiskleb võõrustaja.")
+        print(f"Külaline: \"Tere, suur tänu kutse eest!\"")
+kulaliste_arv = int(input("Sisestage külaliste arv:"))
+tervitus(kulaliste_arv)
+
+
+#5
+failinimi = input("Siseta failinimi :")
+fail = open(failinimi, "r+")
+read = fail.readlines
+print(read)
+
+
 
 
 

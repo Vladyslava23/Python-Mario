@@ -1,0 +1,17 @@
+#07.01.2025 Vladyslava Bilokha
+
+#2
+tekst = input("Sisseta tekst:")
+tulemus = "".join(f"{i}..." for i in tekst)
+print(tulemus)
+
+
+#10
+tekst = input("Sisseta tekst:")
+tulemus = "".join(i for i in tekst if i not in "AEIOUaeiou")
+print(tulemus)
+'''
+#12
+tekst = input("Sisseta toote nimi:")
+tulemus = 
+'''

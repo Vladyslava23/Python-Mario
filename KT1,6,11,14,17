@@ -1,0 +1,36 @@
+#18.12.2024 Vladyslava Bilokha
+
+#1
+import random
+
+skoor = 0
+for i in range(10):
+    a, b = random.randint(1, 10), random.randint(1, 10)
+    vastus = int(input(f"{a} * {b} = "))
+    skoor += (vastus == a * b)
+print(f"Õigeid vastuseid : {skoor}/10")
+
+
+
+#6
+print("Paaris või paaritu arvu kontroll")
+arv = int(input("Sisseta arv:"))
+if arv == 0:
+    print("Palun sisseta arv, mis ei ole null")
+elif arv % 2 == 0:
+    print(f"{arv} on paarisav")
+else:
+    print(f"{arv} on paaritu arv")
+
+
+
+
+#11
+
+
+'''
+#14
+fail = open("palk.txt")
+read = fail.readlines()
+'''
+
