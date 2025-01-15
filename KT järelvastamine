@@ -1,17 +1,30 @@
-#07.01.2025 Vladyslava Bilokha
+#07.01.24 Vladyslava Bilokha
 
-#2
-tekst = input("Sisseta tekst:")
-tulemus = "".join(f"{i}..." for i in tekst)
+#2 
+tekst = input("Sisesta tekst:")
+tulemus = ""
+for i in tekst:
+    tulemus += i + "..."
 print(tulemus)
 
 
 #10
-tekst = input("Sisseta tekst:")
-tulemus = "".join(i for i in tekst if i not in "AEIOUaeiou")
+tekst = input("Sisesta tekst:")
+tulemus = ""
+for i in tekst:
+    if i not in "AEIOUaeiou":
+        tulemus += i
 print(tulemus)
-'''
+
+
 #12
-tekst = input("Sisseta toote nimi:")
-tulemus = 
-'''
+ostukorv = {}
+toode = input("Sisestage toode:")
+while toode:
+    if toode in ostukorv:
+        ostukorv[toode] += 1
+    else:
+        ostukorv[toode] = 1
+    toode = input("Sisestage toode:")
+for toode in sorted(ostukorv):
+    print(ostukorv[toode],toode.upper())
