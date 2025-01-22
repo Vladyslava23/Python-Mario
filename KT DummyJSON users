@@ -1,0 +1,14 @@
+#22.01.2025 Vladyslava Bilokha
+
+import requests
+
+firstName = input("Sisesta nimi:")
+
+url = f"https://dummyjson.com/users"
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json
+    print = (data['{firstName}'])
+else: 
+    print("Tekkis viga:", response.status_code)
