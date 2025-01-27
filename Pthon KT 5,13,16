@@ -1,0 +1,39 @@
+#27.01.2025 Vladyslava Bilokha
+import random
+'''
+#5
+ostunimekiri= []
+while ostunimekiri:
+    kaup = input("Sisestage kaup : ")
+    if kaup == "": 
+        ostunimekiri.append(kaup)
+print("Teie ostunimekiri:")
+for i in ostunimekiri:
+    print(i)
+
+
+#13
+def kontrolli_paarisust():
+        arv = int(input("Sisestage arv: "))
+        if arv == 0:
+            print("Te ei saa sisestada nulli.Proovige uuesti.")
+        if arv % 2 == 0:
+            print(f"Arv {arv} on paaris.")
+        else:
+            print(f"Arv {arv} on paaritu.")
+kontrolli_paarisust()
+'''
+#16
+saldo = 100 
+while saldo > 0:
+     print("Saldo:",saldo)
+     panus = int(input("Panus:"))
+     if panus > saldo:
+          print ("Pole piisavalt raha")
+kasutaja_viske = random.randint(1,6) + random.randint(1,6)
+arvuti_viske = random.randint(1,6) + random.randint(1,6)
+print("Sina:",kasutaja_viske,"Arvuti",arvuti_viske)
+if kasutaja_viske > arvuti_viske:
+     saldo += panus
+elif kasutaja_viske > arvuti_viske:
+     saldo -= panus
