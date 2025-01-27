@@ -1,6 +1,6 @@
 #27.01.2025 Vladyslava Bilokha
 import random
-'''
+
 #5
 ostunimekiri= []
 while ostunimekiri:
@@ -22,7 +22,7 @@ def kontrolli_paarisust():
         else:
             print(f"Arv {arv} on paaritu.")
 kontrolli_paarisust()
-'''
+
 #16
 saldo = 100 
 while saldo > 0:
