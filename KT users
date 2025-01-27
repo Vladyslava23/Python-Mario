@@ -1,0 +1,17 @@
+#27.01.2025 Vladyslava
+import requests
+
+url = "https://dummy-json.mock.beeceptor.com/users"
+response = requests.get(url)
+
+if response.status_code == 200:
+    users_data = response.json()
+    for users in users_data:
+        print(f'Nimi:{users["name"]}')
+        print(f'Firma: {users["company"]}')
+        print(f'Tõmblukk: {users["zip"]}')
+        print(f'Telefon: {users["phone"]}')
+        print(f'Meili: {users["email"]}')
+
+else: 
+    print("Päring ebaõnnestus, staatuskood:", response.status_code)
